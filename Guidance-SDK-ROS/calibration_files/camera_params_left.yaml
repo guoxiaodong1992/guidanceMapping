@@ -1,0 +1,20 @@
+image_width: 320		
+image_height: 240
+camera_name: guidance/left
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [236.373179, 0.000000, 162.668557, 0.000000, 236.347840, 122.104686, 0.000000, 0.000000, 1.000000]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [0.014817, -0.001572, -0.002230, 0.006509, 0.000000]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [0.999292, 0.005741, -0.037173, -0.005826, 0.999981, -0.002157, 0.037159, 0.002372, 0.999307]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [260.231292, 0.000000, 177.959751, 0.000000, 0.000000, 260.231292, 122.541568, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000]

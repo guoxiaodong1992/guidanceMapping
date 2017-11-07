@@ -1,0 +1,27 @@
+<launch>
+
+<!-- Transform from base_link to the various sensors -->
+<node pkg="tf2_ros" type="static_transform_publisher" name="guidance_broadcaster_2" args="0.0 0.0 0.105 0.0 0.0 -1.57079632679 base_link guidance_down" />
+<node pkg="tf2_ros" type="static_transform_publisher" name="guidance_broadcaster_3" args="0.10 0.0 0.09 1.57079632679 0 -1.57079632679 base_link guidance_front" />
+<node pkg="tf2_ros" type="static_transform_publisher" name="guidance_broadcaster_4" args="0.0 0.10 0.09 1.57079632679 0 3.14159265359 base_link guidance_right" />
+<node pkg="tf2_ros" type="static_transform_publisher" name="guidance_broadcaster_5" args="0.10 0.0 0.09 1.57079632679 0 1.57079632679 base_link guidance_back" />
+<node pkg="tf2_ros" type="static_transform_publisher" name="guidance_broadcaster_6" args="0.0 -0.10 0.09 1.57079632679 0 0 base_link guidance_left" />
+
+<!-- Here we generate the camera offsets for more accuracy, you have to do this for each camera set -->
+<!-- You could save a little overhead by directly transforming from camera to base_link and skip the above transforms -->
+<node pkg="tf2_ros" type="static_transform_publisher" name="guidance_broadcaster_7" args="-0.075 0 0 0 0 0 guidance_down down_left"/>
+<node pkg="tf2_ros" type="static_transform_publisher" name="guidance_broadcaster_8" args="0.075 0 0 0 0 0 guidance_down down_right" />
+
+<node pkg="tf2_ros" type="static_transform_publisher" name="guidance_broadcaster_9" args="-0.075 0 0 0 0 0 guidance_front guidancefront_left"/>
+<node pkg="tf2_ros" type="static_transform_publisher" name="guidance_broadcaster_10" args="0.075 0 0 0 0 0 guidance_front guidancefront_right" />
+
+<node pkg="tf2_ros" type="static_transform_publisher" name="guidance_broadcaster_11" args="-0.075 0 0 0 0 0 guidance_right right_left"/>
+<node pkg="tf2_ros" type="static_transform_publisher" name="guidance_broadcaster_12" args="0.075 0 0 0 0 0 guidance_right right_right" />
+
+<node pkg="tf2_ros" type="static_transform_publisher" name="guidance_broadcaster_13" args="-0.075 0 0 0 0 0 guidance_back back_left"/>
+<node pkg="tf2_ros" type="static_transform_publisher" name="guidance_broadcaster_14" args="0.075 0 0 0 0 0 guidance_back gback_right" />
+
+<node pkg="tf2_ros" type="static_transform_publisher" name="guidance_broadcaster_15" args="-0.075 0 0 0 0 0 guidance_left left_left"/>
+<node pkg="tf2_ros" type="static_transform_publisher" name="guidance_broadcaster_16" args="0.075 0 0 0 0 0 guidance_left left_right" />
+
+</launch>
